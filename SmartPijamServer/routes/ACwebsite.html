@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@font-face { font-family: JuneBug; src: url('digital.ttf'); } 
+body {
+	font-family: JuneBug
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+
+<body bgcolor="#515151">
+	<script type="text/javascript">
+	setInterval(function(){
+	debugger;
+	var str = $.get("https://smartpijam.herokuapp.com/whattemp", function(data, status){
+		
+		$("#temp").html(data);
+    });
+	
+	}, 5000);
+	</script>
+	<center>
+		<img src="AC.png"  style="width:75%;height:75%; padding-top: 10%"  >
+		<p id="temp" style="position: absolute; top: 250px; right: 342px; width: 16px; padding: 4px; color: #c5d5f4; font-weight: bold; font-size: 25px;">29</p>
+	</center>
+</body>
+</html>
